@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Assignment 2 CS290 Jonathan Patneau</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+  </head>
+
+  <body>
+    <table>
+      <caption> Most selected cars and their colors! </caption>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Silverado</th>
+          <th>Lancer</th>
+          <th>Outlander</th>
+          <th>Mustang</th>
+          <th>Tesla</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="nth-of-type">
+          <td><i>Black</i></td>
+          <td>15</td>
+          <td>10</td>
+          <td>5</td>
+          <td>30</td>
+          <td>25</td>
+        </tr>
+        <tr class="nth-of-type1">
+          <td><i>White</i></td>
+          <td>5</td>
+          <td>6</td>
+          <td>2</td>
+          <td>8</td>
+          <td>1</td>
+        </tr>
+        <tr class="nth-of-type">
+          <td><i>Silver</i></td>
+          <td>20</td>
+          <td>7</td>
+          <td>38</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+        <tr class="nth-of-type1">
+          <td><i>Red</i></td>
+          <td>2</td>
+          <td>5</td>
+          <td>6</td>
+          <td>15</td>
+          <td>4</td>
+        </tr>
+        <tr class="nth-of-type">
+          <td><i>Green</i></td>
+          <td>3</td>
+          <td>1</td>
+          <td>1</td>
+          <td>2</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td colspan="2">Footer 1</td>
+          <td colspan="4">Footer 2</td>
+        </tr>
+      </tbody>
+    </table>
+    <ul>
+      <section>
+        <b>A list of gaming computer manufacturers:</b>
+      </section>
+      <li>Ibuypower</li>
+      <li>Alienware</li>
+      <li>Cyberpower PC</li>
+    </ul>
+    <div class="outercontent">
+      <div class="innercontent"> The inner Div.
+      </div>
+    </div>
+
+    <br />
+
+    <form action="http://classes.engr.oregonstate.edu/eecs/winter2015/cs290-400/tools/class-content/form_tests/check_request.php" method="get">
+      <fieldset>
+        <legend>The GET data</legend>
+        <label>Text here:
+            <input type="text" name="text_input" size="30">
+        </label>
+        <br />
+        <label>Number here:
+            <input type="number" name="numerical_input">
+        </label>
+        <br />
+        <label>Password here:
+            <input type="password" name="password_input" size="30" maxlength="100">
+        </label>
+        <br />
+        <p> Select between the following Candy: <br />
+          <label>
+            <input name="candy" type="radio" value="snickers">Snickers
+          </label><br />
+          <label>
+            <input name="candy" type="radio" value="skittles">Skittles
+          </label><br />
+          <label>
+            <input name="candy" type="radio" value="mentos">Mentos
+          </label><br />
+        </p>
+        <input type="submit" value="Submit">
+      </fieldset>
+    </form>
+    <br />
+    <form action="http://classes.engr.oregonstate.edu/eecs/winter2015/cs290-400/tools/class-content/form_tests/check_request.php" method="post">
+      <fieldset>
+        <legend>The POST data</legend>
+        <label>Text here:
+            <input type="text" name="text_input" size="30">
+        </label>
+        <br />
+        <label>Number here:
+            <input type="number" name="numerical_input">
+        </label>
+        <br />
+        <label>Password here:
+            <input type="password" name="password_input" size="30" maxlength="100">
+        </label>
+        <br />
+        <p> Select between the following Candy: <br />
+          <label>
+            <input name="candy" type="radio" value="snickers">Snickers
+          </label><br />
+          <label>
+            <input name="candy" type="radio" value="skittles">Skittles
+          </label><br />
+          <label>
+            <input name="candy" type="radio" value="mentos">Mentos
+          </label><br />
+        </p>
+        <input type="submit" value="Submit">
+      </fieldset>
+    </form>
+  </body>
+
+</html>
