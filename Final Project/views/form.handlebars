@@ -1,0 +1,94 @@
+<h1 style="color: red">Workout Tracker</h1>
+<div class = "container">
+<fieldset>
+	<legend>Add excersise here:</legend>
+		<form method="post" class="form-horizontal  col-md-6" action="/table">
+			<div class="col-sm-3">
+				<input type="text" name="name" placeholder="Name" />
+			</div>
+			<div class="col-sm-3">
+				<input type="number" name="reps" placeholder="Reps" />
+			</div>
+			<div class="col-sm-3">
+				<input type="number" name="weight" placeholder="Weight" />
+			</div>
+			<div class="col-sm-3">
+				<input type="date" name="date" placeholder="Date:yyyy-mm-dd" />
+			</div>
+			<div class="col-sm-3">
+				<select name="lbs">
+					<option value="1">lbs</option>
+					<option value="0">kg</option>
+				</select>
+			</div>
+			<div class="col-sm-3">
+				<input type="submit" name="add-excercise">
+			</div>
+		</form>
+</fieldset>
+</div>
+<br>
+<br>
+<br>
+<table border = "3" id=workoutsTable>
+	<thead>
+	<tr>
+		<th>Name</th>
+		<th>Reps</th>
+		<th>Weight</th>
+		<th>Date</th>
+		<th>Units</th>
+	</tr>
+	</thead>
+	<br>
+	<tbody>
+		{{#each results}}
+			<tr>
+				<td>{{this.name}}</td>
+				<td>{{this.reps}}</td>
+				<td>{{this.weight}}</td>
+				<td>{{this.date}}</td>
+				{{#if this.lbs}}
+					<td>lbs</td>
+				{{else}}
+					<td>kg</td>
+				{{/if}}
+				<td>
+				<div class="col-sm-3">					
+					<form id={{this.id}} action="/update-table" method="get" style="display: none;" >
+						<input type="hidden" name="id" value="{{this.id}}"/>
+						<label>Name:
+						<input type="text" name="name" value="{{this.name}}"/>
+						</label><br>
+						<label>Reps
+						<input type="number" name="reps" value="{{this.reps}}"/>
+						</label><br>
+						<label>Weight:
+						<input type="number" name="weight" value="{{this.weight}}"/>
+						</label><br>
+						<label>Date:
+						<input type="date" name="date" value="{{this.date}}"/>
+						</label><br>
+						<select name="lbs">
+							<option value="1">lbs</option>
+							<option value="0">kg</option>
+						</select>
+						<button class="edit btn btn-submit" type="submit" name="edit-button">Submit Changes</button>
+						<br>
+					</form>
+				</div>
+					<button type="button" onclick="edit({{this.id}})">Edit</button>
+				</td>
+				<td>
+					<form method="get" action="/delete">
+						<input type="hidden" name="id" value="{{this.id}}">
+						<button type="submit" id="delbut" onclick="delete({{this.id}})">Delete</button>
+					</form>
+				</td>
+			</tr>
+			{{/each}}
+	</tbody>
+</table>
+<form action="/reset-table" method="get">
+	<button type="submit" id="reset" style="color: blue; outline-color: blue">Reset Table</button>
+</form>
